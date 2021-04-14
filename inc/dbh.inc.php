@@ -11,5 +11,4 @@ if(!$conn){
   die("Verbindung fehlgeschlagen: " . mysqli_connect_error());
 
 }
-
- ?>
+?>
