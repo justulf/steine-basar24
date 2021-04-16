@@ -94,7 +94,7 @@ function emailExists($conn, $email){
 }
 
 function createUser($conn, $name, $surname, $email, $pwd){
-  $sql = "INSERT INTO users (usersName, usersSurname, usersEmail, usersPwd) VALUES (?, ?, ?, ?);";
+  $sql = 'INSERT INTO users (usersName, usersSurname, usersEmail, usersPwd) VALUES (?, ?, ?, ?);';
   $stmt = mysqli_stmt_init($conn);
 
   if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -150,11 +150,11 @@ function loginUser($conn, $email, $pwd){
 }
 
 function createUsersList($conn){
-  $query = "SELECT userId FROM users";
+  $query = 'SELECT userId FROM users';
   $result = mysqli_query($conn, $query);
 
   if(empty($result)){
-    $query = "CREATE TABLE users(
+    $query = 'CREATE TABLE users(
               usersId int(11) PRIMARY KEY AUTO_INCREMENT,
               usersEmail varchar(255) NOT NULL,
               usersName varchar(255) NOT NULL,
@@ -162,7 +162,26 @@ function createUsersList($conn){
               usersPwd varchar(255) NOT NULL,
               usersComments varchar(255),
               usersTransactions varchar(255),
-              usersPermission int NOT NULL);";
+              usersPermission int NOT NULL);';
+
+    $result = mysqli_query($conn, $query);
+  }
+}
+
+function createProductsList($conn){
+  $query = 'SELECT productId FROM products';
+  $result = mysqli_query($conn, $query);
+
+  if(empty($result)){
+    $query = 'CREATE TABLE products(
+              productsId int(11) PRIMARY KEY AUTO_INCREMENT,
+              productsName varchar(255) NOT NULL,
+              productsPicture longblob NOT NULL,
+              productsShortDescription varchar(255) NOT NULL,
+              productsFullDescription text NOT NULL,
+              productsAmount int NOT NULL,
+              productsRating double,
+              productsPrice double NOT NULL);';
 
     $result = mysqli_query($conn, $query);
   }
