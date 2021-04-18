@@ -1,3 +1,29 @@
 .dropdown:hover .dropdown-menu {
    display: block;
 }
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.card:hover .card-overlay {
+  right: 0;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  background-color: #fff;
+  color: #c7af52;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: right .8s;
+}
