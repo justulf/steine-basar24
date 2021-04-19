@@ -16,8 +16,8 @@
   position: absolute;
   top: 0;
   right: -100%;
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
   height: 100%;
   width: 100%;
   z-index: 10;
