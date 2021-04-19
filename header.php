@@ -29,6 +29,7 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="#">Warenkorb</a>
+              <p>
             </li>
             <?php
               if(isset($_SESSION["usersId"])){
